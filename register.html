@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+    <script src="script.js"></script>
+</head>
+<body>
+    <div style="margin:10px 60px 0px 60px;">
+        <div>
+            <img src="logo.png" style="height:70px;display:inline-block;"/>
+            <h4 style="display: inline-block;margin-left: 50%;">Above 200 successful camps</h4>
+        </div> <!--Banner div closed-->
+        
+        <div style="background-color: rgb(12, 61, 94);margin:0px 20px; border-radius: 10px 0px;padding:12px; ">
+            <a href="index.html" id="nav">Home</a>
+            <a href="about.html" id="nav">About</a>
+            <a href="register.html" id="nav">Register</a>
+            <a href="contactus.html" id="nav">Contact Us</a>
+       </div><!--Navbar div closed-->
+
+
+        <div style="margin:35px 30%;">
+
+            <form name="regForm"  action="register.html" onsubmit="return Validate()" method="POST">
+                <h3>Summer Camp Registration</h3>
+
+                <table border="0px" cellpadding=5px style="border-radius: 10px;box-shadow: 0 0 10px grey;">
+                
+                    <tr id="success_message" style="display: none;color:green;">
+                        <td colspan="3">
+                            <span><b>Registered successfully !</b></span>
+                        </td>
+                    </tr><!--Displaying success message end-->
+                    
+
+                    <tr>
+                        <td> <!--onmouseup="mouseUp(this)" onmousedown="mouseDown(this)" onmouseover="mouseOver(this)" onmouseout="mouseOut(this)"-->
+                            <input name='first_name' type="text" placeholder="First name" id="input_property" />
+                        </td>
+                        <td>
+                            <input name='middle_name' type="text" placeholder="Middle name" id="input_property"/>
+                        </td>
+                        <td>
+                            <input name='last_name' type="text" placeholder="Last name" id="input_property"/>
+                        </td>
+                    </tr><!--Name field row end-->
+
+                    <tr id="name_blank" class="messages" style="display:none;">
+                        <td colspan="2">
+                            <span>Enter your name</span>
+                        </td>
+                    </tr>
+                    <tr id="name_limitexceed" class="messages" style="display:none;">
+                        <td colspan="2">
+                            <span></span>
+                        </td>
+                    </tr> <!--Name error field rows end-->
+
+                    
+                    <tr>
+                        <td colspan="3">
+                            <input name="birthdate" type="date" placeholder="Birthdate" id="input_property">
+                        </td>
+                    </tr><!--Birthdate row ends-->
+
+                    <tr id="birthdate_blank" class="messages" style="display:none;">
+                        <td colspan="2">
+                            <span>Enter your birthdate</span>
+                        </td>
+                    </tr>
+                    <tr id="birthdate_limitexceed" class="messages" style="display:none;">
+                        <td colspan="3">
+                            <span>Age limit for this camp is 15-25 years (01/01/1995-31/12/2004)</span>
+                        </td>
+                    </tr> <!--Birthdate error row ends-->
+
+
+                    <tr>
+                        <td colspan="3">
+                            <input name="address" type="text" placeholder="Street Address" id="input_property">
+                        </td>
+                    </tr><!--Address row ends-->
+
+                    <tr id="address_blank" class="messages" style="display:none;">
+                        <td colspan="2">
+                            <span>Enter your Address</span>
+                        </td>
+                    </tr>
+                    <tr id="address_limitexceed" class="messages" style="display:none;">
+                        <td colspan="2">
+                            <span>Address length should be less than 60</span>
+                        </td>
+                    </tr><!--Address error rows ends-->
+
+
+                    <tr >
+                        <td colspan="3">
+                            <input type="text" placeholder="Street Address Line 2 (Optional)" id="input_property">
+                        </td>
+                    </tr><!--Address line 2 ends-->
+
+
+                    <tr>
+                        <td>
+                            <input type="text" placeholder="City" id="input_property">
+                        </td>
+                        <td colspan="2">
+                            <input type="text" placeholder="State" id="input_property">
+                        </td>
+                    </tr><!--city & state row ends--> 
+                    
+                    
+                    <tr>
+                        <td>
+                            <input name="pincode" type="text" placeholder="Pincode" id="input_property" onkeypress="return pincode_validation(this,event)">
+                        </td>
+                        <td colspan="2">
+                            <input name="country" type="text" placeholder="Country" id="input_property">
+                        </td>
+                    </tr>
+
+                    <tr class="messages" >
+                        <td colspan="2" id="pincode_blank" style="display:none;">
+                            <span>Enter pincode</span>
+                        </td>
+                        <td colspan="2" id="pincode_length_invalid" style="display:none;">
+                            <span>Length of pincode must be 6</span>
+                        </td>
+
+                        <td colspan="1" id="country_blank" style="display:none;">
+                            <span>Enter country name</span>
+                        </td>
+                    </tr>
+
+                    
+                    <tr>
+                        <td colspan="3">
+                            <input name="mobile" type="text" placeholder="Mobile number" id="input_property" onkeypress="return mobile_validation(this,event)">
+                        </td>
+                    </tr><!--Mobile number row ends-->
+                    
+                    <tr class = "messages">
+                        <td colspan="1" id="mobile_blank" style="display:none;">
+                            <span>Enter mobile number</span>
+                        </td>
+                        <td colspan="2" id="mobile_less_digits" style="display:none;">
+                            <span>Length of mobile number must be 10</span>
+                        </td>
+                    </tr>
+
+                    
+                    <tr>
+                        <td colspan="3">
+                            <input name="email" type="text" placeholder="Email" id="input_property">
+                        </td>
+                    </tr><!--Email row ends-->
+
+                    <tr class = "messages">
+                        <td colspan="1" id="email_blank" style="display:none;">
+                            <span>Enter email</span>
+                        </td>
+                        <td colspan="2" id="email_invalid" style="display:none;">
+                            <span>Email address is not valid</span>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <td colspan="3">
+                            <input type="submit" id="input_property" value="submit" style="margin-left:150px;width:130px;">
+                        </td>
+                    </tr>
+                </table>
+
+            </form>
+        </div><!--main body div closed-->
+        <div style="float:right;">Copyright 2020@lrmarathe</div><!--Footer div closed-->
+    </div> <!--Container div closed-->
+
+    
+</body>
+</html>

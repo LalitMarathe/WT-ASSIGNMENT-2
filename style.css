@@ -1,0 +1,35 @@
+body{
+    font-family: sans-serif;
+}
+
+#nav{
+    display:inline-block;
+    color: white;
+    padding:0px 30px;
+    /*
+    font-family:sans-serif; 
+    */
+    border-right-style: solid; 
+    border-right-width: 1px; 
+    text-decoration: none;
+}
+
+
+/*----------------------------------------Register.html--------------------------------------------------*/
+
+.messages{
+    font-size: 13px;
+    color:red;
+}
+#input_property{
+    width:80%;
+    height:35px;
+    font-size: 15px;
+    border:1px solid rgb(240, 152, 52);
+    border-radius: 10px;
+    text-align-last: center;
+    outline: none;
+    text-align: center;
+    
+}
+
